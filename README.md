@@ -108,7 +108,7 @@ java -Ddata.folder=./custom-data -cp bin edu.ccrm.cli.MainMenu
    javac -version
    ```
 
-   ![JDK Installation Verification](screenshots/jdk-verification.png)
+   ![img.png](img.png)
 
 ### Eclipse IDE Setup
 
