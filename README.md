@@ -128,14 +128,14 @@ java -Ddata.folder=./custom-data -cp bin edu.ccrm.cli.MainMenu
     - Select JDK version (11+)
     - Configure build path if needed
 
-   ![Eclipse Project Setup](screenshots/eclipse-setup.png)
+   ![img_1.png](img_1.png)
 
 4. **Import Existing Project**
     - File → Import → General → Existing Projects into Workspace
     - Browse to CCRM project folder
     - Select project and click Finish
 
-   ![Eclipse Import](screenshots/eclipse-import.png)
+   ![img_2.png](img_2.png)
 
 ## Project Structure & Syllabus Mapping
 
@@ -235,35 +235,6 @@ assert grade.getPoints() >= 0.0 && grade.getPoints() <= 10.0 : "Invalid grade po
 - **Backup System**: Automated backup with size calculation
 - **Data Persistence**: File-based storage in configurable data folder
 
-## Screenshots
-
-### Installation & Setup
-- `screenshots/jdk-verification.png` - JDK installation verification (`java -version`)
-- `screenshots/eclipse-setup.png` - Eclipse workspace and CCRM project setup
-- `screenshots/eclipse-import.png` - Importing CCRM project structure
-
-### Application Running
-- `screenshots/main-menu.png` - CCRM main menu interface
-- `screenshots/student-management.png` - Student management operations
-- `screenshots/course-management.png` - Course catalog management
-- `screenshots/enrollment-process.png` - Student enrollment workflow
-
-### Features Demonstration
-- `screenshots/transcript-report.png` - Generated student transcript
-- `screenshots/gpa-distribution.png` - GPA distribution analytics
-- `screenshots/import-export.png` - CSV import/export functionality
-- `screenshots/backup-operation.png` - Backup system with size calculation
-
-## Demo Video
-
-📹 **CCRM System Walkthrough**: [YouTube Demo Link](https://youtube.com/watch?v=your-ccrm-demo)
-
-*5-minute demonstration covering:*
-- Application startup and configuration
-- Student and course management
-- Enrollment process and grade assignment
-- Transcript generation and GPA reports
-- Import/export and backup features
 
 ## Usage Guide
 
@@ -321,56 +292,6 @@ CS102,Data Structures,4,Computer Science,FALL
 MATH201,Calculus I,3,Mathematics,SPRING
 ```
 
-## Configuration
 
-### AppConfig Settings
-- **Data Folder**: Location for CSV files and backups
-- **Max Credits**: Maximum credits per student enrollment
-- **Default Values**: Configured in `AppConfig.getInstance()`
 
-### System Properties
-```bash
-# Set custom data folder
--Ddata.folder=./my-data
 
-# Set maximum credits limit
--Dmax.credits=20
-
-# Enable debug logging
--Ddebug.mode=true
-```
-
-## Troubleshooting
-
-### Common Issues
-1. **ClassNotFoundException**: Ensure all packages are compiled and in classpath
-2. **FileNotFoundException**: Verify data folder exists and is writable
-3. **NumberFormatException**: Check CSV file formats and data types
-4. **MaxCreditLimitExceededException**: Student trying to enroll beyond credit limit
-5. **DuplicateEnrollmentException**: Attempting to enroll in same course twice
-
-### Error Handling
-- All user inputs are validated with try-catch blocks
-- Custom exceptions provide meaningful error messages
-- File I/O operations include proper exception handling
-- Optional class prevents NullPointerException
-
-### Debug Tips
-```bash
-# Enable assertions for validation
-java -ea -cp bin edu.ccrm.cli.MainMenu
-
-# Check application configuration on startup
-# Look for: [AppConfig] dataFolder=... maxCredits=...
-
-# Verify CSV file formats match expected structure
-# Use sample files in test-data/ folder as reference
-```
-
----
-
-**Project**: CCRM - College Course Registration Management  
-**Language**: Java 11+  
-**Architecture**: Layered (CLI → Service → Domain)  
-**Data Storage**: CSV files with NIO operations  
-**Last Updated**: September 2025
